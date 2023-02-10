@@ -1,0 +1,44 @@
+<%- include("./partials/head") %>
+
+    <%- include("./partials/header-adm") %>
+        <div class="way">
+            <h5><a href="/user/">Cliente</a></h5>
+            <h5> - Atualizar cliente</h5>
+        </div>
+
+        <main class="container-main">
+            <section id="container-form">
+                <h2>Atualizar usuário</h2>
+                <% if(locals.error){ %>
+                    <h2 class="error-alert">
+                        <%= error.message %>
+                    </h2>
+                    <% } %>
+
+                        <div class="success-alert">
+                            <%= locals.message %>
+                        </div>
+                        <form action="/user/edit/<%= users.id %>?_method=put" method="post" enctype="multipart/form-data">
+                            <label for="nome">Nome</label>
+                            <input value="<%= users.name %>" type="text" name="nome" />
+
+                            <label for="sobrenome">Sobrenome</label>
+                            <input value="<%= users.last_name %>" type="text" name="sobrenome" />
+
+                            <label for="email">E-mail</label>
+                            <input value="<%= users.email %>" type="email" name="email" />
+
+                            <label for="senha">Senha</label>
+                            <input value="<%= users.password %>" type="password" name="senha" />
+
+                            <label for="confirmar_senha">Confirmar senha</label>
+                            <input value="<%= users.password %>" type="password" name="confirmar_senha" />
+
+                            <label for="avatar">Avatar</label>
+                            <input type="file" name="avatar" placeholder="Número do Avatar" />
+
+                            <button type="submit">Atualizar</button>
+                        </form>
+            </section>
+        </main>
+        <%- include("./partials/footer-adm") %>

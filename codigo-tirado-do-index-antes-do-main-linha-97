@@ -1,0 +1,61 @@
+    <% if(listProducts.length > 0) { %>
+
+    <section class="section-categorias">
+      <h3 id="secao1">Linha Masculina</h3>
+      <div class="section-perfumes">
+        <% for (let product of listProducts) {%> <%if(product.Category.name ==
+        'Linha masculina'){%>
+        <div class="perfumes">
+          <a href="/product/<%= product.id %>/description">
+            <img src="<%= product.Image.image %> " alt="" />
+            <h3><%= product.name %></h3>
+            <h5><%= product.description %></h5>
+            <h4>R$ <%= product.price.replace('.', ',') %></h4>
+            <h6>8x sem juros no cartão de Credito</h6>
+            <button type="button">Comprar</button>
+          </a>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </section>
+
+    <section class="section-categorias">
+      <h3 id="secao2">Linha Feminina</h3>
+      <div class="section-perfumes">
+        <% for (let product of listProducts) {%> <%if(product.Category.name ==
+        'Linha feminina'){%>
+        <div class="perfumes">
+          <a href="/product/<%= product.id %>/description">
+            <img src="<%= product.Image.image %> " alt="" />
+            <h3><%= product.name %></h3>
+            <h5><%= product.description %></h5>
+            <h4>R$ <%= product.price.replace('.', ',') %></h4>
+            <h6>8x sem juros no cartão de Credito</h6>
+            <button type="button">Comprar</button>
+          </a>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </section>
+    <section class="section-categorias">
+      <h3 id="secao3">Linha Infantil</h3>
+      <div class="section-perfumes">
+        <% for (let product of listProducts) {%> <%if(product.Category.name ==
+        'Linha infantil'){%>
+        <div class="perfumes">
+          <a href="/product/<%= product.id %>/description">
+            <img src="<%= product.Image.image %> " alt="" />
+            <h3><%= product.name %></h3>
+            <h5><%= product.description %></h5>
+            <h4>R$ <%= product.price.replace('.', ',') %></h4>
+            <h6>8x sem juros no cartão de Credito</h6>
+            <button type="button">Comprar</button>
+          </a>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </section>
+    <% } else { %>
+    <h2 class="error-alert">Nenhum produto encontrado!!</h2>
+    <% } %>
+ </section>

@@ -1,0 +1,48 @@
+<%- include("./partials/head")%> <%- include("./partials/header-adm")%>
+<main class="container-adm">
+  <div class="way">
+    <h5><a href="/category/">Categoria</a></h5>
+  </div>
+  <div class="add-item">
+    <form action="/category/create" method="get">
+      <button type="submit">Adicionar</button>
+    </form>
+  </div>
+
+  <div class="in-table">
+    <input type="search" name="" id="" placeholder="Pesquisar..." />
+    <img src="/img/lupa.png" alt="" />
+  </div>
+
+  <% if(listCategorys.length> 0) { %>
+
+  <div class="container-btn-categorias">
+    <% for (let category of listCategorys) { %>
+    <div class="btn-categoria">
+      <a href="/category/<%= category.id %>/product">
+        <h4><%= category.name %></h4>
+      </a>
+
+      <div class="btn-category">
+        <a href="/category/edit/<%= category.id %>">
+          <button type="button">
+            <img src="/img/pen.png" alt="" />
+          </button>
+        </a>
+        <a href="/category/delete/<%= category.id %>">
+          <button type="button">
+            <img src="/img/lata-de-lixo.png" alt="" />
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <% } %>
+  </div>
+
+  <% } %>
+
+  <%- include("./partials/pagination") %>
+</main>
+
+<%- include("./partials/footer-adm")%>
